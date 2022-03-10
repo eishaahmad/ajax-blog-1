@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Messages</h1>
+
+<table id="messages">
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @messages%>
+  </tbody>
+</table>
+
+<br> 
+  <%= paginate @messages, theme: 'bootstrap-5',
+                   pagination_class: "pagination-sm flex-wrap justify-content-center",
+                   nav_class: "d-inline-block"%>
+<div id = "new-message">
+  <%= link_to 'New Message', new_message_path, remote: true %>
+</div>
